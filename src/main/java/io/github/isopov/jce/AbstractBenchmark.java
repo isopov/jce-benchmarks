@@ -5,7 +5,7 @@ import org.openjdk.jmh.annotations.*;
 @State(Scope.Benchmark)
 @Measurement(time = 1, iterations = 5)
 @Warmup(time = 1, iterations = 5)
-@Fork(value = 1)
+@Fork(value = 3)
 public abstract class AbstractBenchmark {
     @Param
     public Provider provider;
