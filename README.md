@@ -1,42 +1,78 @@
-On a laptop with 
+Full run on github actions:
 ```
-$ java -version
-openjdk version "17.0.3" 2022-04-19 LTS
-OpenJDK Runtime Environment Corretto-17.0.3.6.1 (build 17.0.3+6-LTS)
-OpenJDK 64-Bit Server VM Corretto-17.0.3.6.1 (build 17.0.3+6-LTS, mixed mode, sharing)
-```
-incomplete run with a single fork
-```
-Benchmark                       (algorithm)    (provider)   Mode  Cnt        Score        Error  Units
-CipherBenchmark.decrypt     AESGCMNoPadding       DEFAULT  thrpt    5  4214935.788 ± 144479.311  ops/s
-CipherBenchmark.decrypt     AESGCMNoPadding       CORRETO  thrpt    5  2315781.057 ±  34763.562  ops/s
-CipherBenchmark.decrypt     AESGCMNoPadding  BOUNCYCASTLE  thrpt    5  1874305.893 ± 168999.854  ops/s
-CipherBenchmark.decrypt     AESGCMNoPadding     CONSCRYPT  thrpt    5  1891528.698 ±  71080.118  ops/s
-CipherBenchmark.encrypt     AESGCMNoPadding       DEFAULT  thrpt    5  2461553.226 ± 270172.128  ops/s
-CipherBenchmark.encrypt     AESGCMNoPadding       CORRETO  thrpt    5  2332806.920 ±  44838.404  ops/s
-CipherBenchmark.encrypt     AESGCMNoPadding  BOUNCYCASTLE  thrpt    5   638919.883 ±  32252.775  ops/s
-CipherBenchmark.encrypt     AESGCMNoPadding     CONSCRYPT  thrpt    5  1589276.172 ±  31367.268  ops/s
-HmacBenchmark.authenticate       HmacSHA256       DEFAULT  thrpt    5  1199891.667 ±   5026.875  ops/s
-HmacBenchmark.authenticate       HmacSHA256       CORRETO  thrpt    5  1175700.028 ±  63082.417  ops/s
-HmacBenchmark.authenticate       HmacSHA256  BOUNCYCASTLE  thrpt    5   799733.006 ±  61601.102  ops/s
-HmacBenchmark.authenticate       HmacSHA256     CONSCRYPT  thrpt    5   341470.572 ± 118606.780  ops/s
-SignatureBenchmark.sign     SHA256withECDSA       DEFAULT  thrpt    5     1575.215 ±    132.594  ops/s
-SignatureBenchmark.sign     SHA256withECDSA       CORRETO  thrpt    5     1139.977 ±     19.726  ops/s
-SignatureBenchmark.sign     SHA256withECDSA  BOUNCYCASTLE  thrpt    5      467.313 ±     29.691  ops/s
-SignatureBenchmark.sign     SHA256withECDSA     CONSCRYPT  thrpt    5    38495.015 ±   6206.362  ops/s
-SignatureBenchmark.sign       SHA256withRSA       DEFAULT  thrpt    5      872.613 ±    145.693  ops/s
-SignatureBenchmark.sign       SHA256withRSA       CORRETO  thrpt    5     1794.809 ±    193.243  ops/s
-SignatureBenchmark.sign       SHA256withRSA  BOUNCYCASTLE  thrpt    5      825.337 ±     24.632  ops/s
-SignatureBenchmark.sign       SHA256withRSA     CONSCRYPT  thrpt    5     1779.308 ±      5.199  ops/s
-SignatureBenchmark.verify   SHA256withECDSA       DEFAULT  thrpt    5      887.665 ±     16.053  ops/s
-SignatureBenchmark.verify   SHA256withECDSA       CORRETO  thrpt    5     1279.282 ±    131.693  ops/s
-SignatureBenchmark.verify   SHA256withECDSA  BOUNCYCASTLE  thrpt    5     1006.267 ±    308.475  ops/s
-SignatureBenchmark.verify   SHA256withECDSA     CONSCRYPT  thrpt    5    18657.265 ±   2856.331  ops/s
-SignatureBenchmark.verify     SHA256withRSA       DEFAULT  thrpt    5    24541.620 ±    113.764  ops/s
-SignatureBenchmark.verify     SHA256withRSA       CORRETO  thrpt    5    56475.926 ±   4067.343  ops/s
-SignatureBenchmark.verify     SHA256withRSA  BOUNCYCASTLE  thrpt    5    25627.597 ±   2089.206  ops/s
-SignatureBenchmark.verify     SHA256withRSA     CONSCRYPT  thrpt    5    60672.508 ±   7478.417  ops/s
-
+Benchmark                       (algorithm)    (provider)   Mode  Cnt        Score       Error  Units
+CipherBenchmark.decrypt     AESGCMNoPadding       DEFAULT  thrpt   15  2741608.816 ± 47231.587  ops/s
+CipherBenchmark.decrypt     AESGCMNoPadding       CORRETO  thrpt   15  1522272.060 ± 40137.054  ops/s
+CipherBenchmark.decrypt     AESGCMNoPadding  BOUNCYCASTLE  thrpt   15  1355433.872 ± 28881.345  ops/s
+CipherBenchmark.decrypt     AESGCMNoPadding     CONSCRYPT  thrpt   15  1330481.909 ± 17148.962  ops/s
+CipherBenchmark.encrypt     AESGCMNoPadding       DEFAULT  thrpt   15  1810941.889 ± 42954.942  ops/s
+CipherBenchmark.encrypt     AESGCMNoPadding       CORRETO  thrpt   15  1560521.304 ± 38929.892  ops/s
+CipherBenchmark.encrypt     AESGCMNoPadding  BOUNCYCASTLE  thrpt   15   423344.094 ±  6405.931  ops/s
+CipherBenchmark.encrypt     AESGCMNoPadding     CONSCRYPT  thrpt   15  1103269.718 ± 18115.371  ops/s
+HmacBenchmark.authenticate          HmacMD5       DEFAULT  thrpt   15  1217450.772 ± 23516.369  ops/s
+HmacBenchmark.authenticate          HmacMD5       CORRETO  thrpt   15  1221880.345 ± 18873.428  ops/s
+HmacBenchmark.authenticate          HmacMD5  BOUNCYCASTLE  thrpt   15  1123098.196 ± 22762.997  ops/s
+HmacBenchmark.authenticate          HmacMD5     CONSCRYPT  thrpt   15   318263.645 ± 21722.897  ops/s
+HmacBenchmark.authenticate         HmacSHA1       DEFAULT  thrpt   15   793005.422 ± 18532.245  ops/s
+HmacBenchmark.authenticate         HmacSHA1       CORRETO  thrpt   15  1287582.141 ± 23098.092  ops/s
+HmacBenchmark.authenticate         HmacSHA1  BOUNCYCASTLE  thrpt   15   814171.794 ± 12364.608  ops/s
+HmacBenchmark.authenticate         HmacSHA1     CONSCRYPT  thrpt   15   321959.227 ± 27254.450  ops/s
+HmacBenchmark.authenticate       HmacSHA256       DEFAULT  thrpt   15   807643.608 ± 17511.770  ops/s
+HmacBenchmark.authenticate       HmacSHA256       CORRETO  thrpt   15   815088.667 ± 14289.166  ops/s
+HmacBenchmark.authenticate       HmacSHA256  BOUNCYCASTLE  thrpt   15   588554.667 ± 14213.184  ops/s
+HmacBenchmark.authenticate       HmacSHA256     CONSCRYPT  thrpt   15   258560.814 ± 16112.703  ops/s
+HmacBenchmark.authenticate       HmacSHA512       DEFAULT  thrpt   15   642063.270 ± 13122.760  ops/s
+HmacBenchmark.authenticate       HmacSHA512       CORRETO  thrpt   15   575937.150 ±  8562.170  ops/s
+HmacBenchmark.authenticate       HmacSHA512  BOUNCYCASTLE  thrpt   15   386837.897 ± 13277.341  ops/s
+HmacBenchmark.authenticate       HmacSHA512     CONSCRYPT  thrpt   15   179285.709 ± 18723.953  ops/s
+SignatureBenchmark.sign       SHA1withECDSA       DEFAULT  thrpt   15     1117.953 ±    22.310  ops/s
+SignatureBenchmark.sign       SHA1withECDSA       CORRETO  thrpt   15      798.106 ±    14.766  ops/s
+SignatureBenchmark.sign       SHA1withECDSA  BOUNCYCASTLE  thrpt   15      329.070 ±    10.480  ops/s
+SignatureBenchmark.sign       SHA1withECDSA     CONSCRYPT  thrpt   15    34319.374 ±   916.562  ops/s
+SignatureBenchmark.sign     SHA256withECDSA       DEFAULT  thrpt   15     1110.468 ±    11.609  ops/s
+SignatureBenchmark.sign     SHA256withECDSA       CORRETO  thrpt   15      793.459 ±    13.968  ops/s
+SignatureBenchmark.sign     SHA256withECDSA  BOUNCYCASTLE  thrpt   15      336.261 ±     8.055  ops/s
+SignatureBenchmark.sign     SHA256withECDSA     CONSCRYPT  thrpt   15    34654.442 ±   724.304  ops/s
+SignatureBenchmark.sign     SHA512withECDSA       DEFAULT  thrpt   15     1124.867 ±    21.914  ops/s
+SignatureBenchmark.sign     SHA512withECDSA       CORRETO  thrpt   15      789.000 ±    12.090  ops/s
+SignatureBenchmark.sign     SHA512withECDSA  BOUNCYCASTLE  thrpt   15      325.218 ±     6.359  ops/s
+SignatureBenchmark.sign     SHA512withECDSA     CONSCRYPT  thrpt   15    34299.541 ±  1007.479  ops/s
+SignatureBenchmark.sign         SHA1withRSA       DEFAULT  thrpt   15      575.664 ±     9.871  ops/s
+SignatureBenchmark.sign         SHA1withRSA       CORRETO  thrpt   15     1221.269 ±    14.910  ops/s
+SignatureBenchmark.sign         SHA1withRSA  BOUNCYCASTLE  thrpt   15      517.745 ±     9.673  ops/s
+SignatureBenchmark.sign         SHA1withRSA     CONSCRYPT  thrpt   15     1231.579 ±    18.896  ops/s
+SignatureBenchmark.sign       SHA256withRSA       DEFAULT  thrpt   15      568.077 ±     9.740  ops/s
+SignatureBenchmark.sign       SHA256withRSA       CORRETO  thrpt   15     1229.551 ±    21.912  ops/s
+SignatureBenchmark.sign       SHA256withRSA  BOUNCYCASTLE  thrpt   15      518.434 ±    13.630  ops/s
+SignatureBenchmark.sign       SHA256withRSA     CONSCRYPT  thrpt   15     1231.622 ±    23.915  ops/s
+SignatureBenchmark.sign       SHA512withRSA       DEFAULT  thrpt   15      568.396 ±    25.614  ops/s
+SignatureBenchmark.sign       SHA512withRSA       CORRETO  thrpt   15     1233.198 ±    32.861  ops/s
+SignatureBenchmark.sign       SHA512withRSA  BOUNCYCASTLE  thrpt   15      511.456 ±     7.103  ops/s
+SignatureBenchmark.sign       SHA512withRSA     CONSCRYPT  thrpt   15     1215.248 ±    21.370  ops/s
+SignatureBenchmark.verify     SHA1withECDSA       DEFAULT  thrpt   15      581.336 ±     6.309  ops/s
+SignatureBenchmark.verify     SHA1withECDSA       CORRETO  thrpt   15      940.215 ±    21.401  ops/s
+SignatureBenchmark.verify     SHA1withECDSA  BOUNCYCASTLE  thrpt   15      724.506 ±    43.968  ops/s
+SignatureBenchmark.verify     SHA1withECDSA     CONSCRYPT  thrpt   15    12893.222 ±   271.066  ops/s
+SignatureBenchmark.verify   SHA256withECDSA       DEFAULT  thrpt   15      587.737 ±    10.290  ops/s
+SignatureBenchmark.verify   SHA256withECDSA       CORRETO  thrpt   15      939.429 ±    18.188  ops/s
+SignatureBenchmark.verify   SHA256withECDSA  BOUNCYCASTLE  thrpt   15      724.814 ±    23.210  ops/s
+SignatureBenchmark.verify   SHA256withECDSA     CONSCRYPT  thrpt   15    12807.589 ±   183.598  ops/s
+SignatureBenchmark.verify   SHA512withECDSA       DEFAULT  thrpt   15      578.363 ±     3.784  ops/s
+SignatureBenchmark.verify   SHA512withECDSA       CORRETO  thrpt   15      944.582 ±    16.439  ops/s
+SignatureBenchmark.verify   SHA512withECDSA  BOUNCYCASTLE  thrpt   15      768.459 ±    17.603  ops/s
+SignatureBenchmark.verify   SHA512withECDSA     CONSCRYPT  thrpt   15    12759.521 ±   298.827  ops/s
+SignatureBenchmark.verify       SHA1withRSA       DEFAULT  thrpt   15    16684.842 ±   323.524  ops/s
+SignatureBenchmark.verify       SHA1withRSA       CORRETO  thrpt   15    38029.302 ±   536.146  ops/s
+SignatureBenchmark.verify       SHA1withRSA  BOUNCYCASTLE  thrpt   15    16928.587 ±   206.322  ops/s
+SignatureBenchmark.verify       SHA1withRSA     CONSCRYPT  thrpt   15    40487.101 ±  1340.644  ops/s
+SignatureBenchmark.verify     SHA256withRSA       DEFAULT  thrpt   15    16616.706 ±   230.353  ops/s
+SignatureBenchmark.verify     SHA256withRSA       CORRETO  thrpt   15    37155.381 ±   340.391  ops/s
+SignatureBenchmark.verify     SHA256withRSA  BOUNCYCASTLE  thrpt   15    16712.180 ±   426.314  ops/s
+SignatureBenchmark.verify     SHA256withRSA     CONSCRYPT  thrpt   15    40505.380 ±  1465.500  ops/s
+SignatureBenchmark.verify     SHA512withRSA       DEFAULT  thrpt   15    16688.354 ±   218.080  ops/s
+SignatureBenchmark.verify     SHA512withRSA       CORRETO  thrpt   15    37855.358 ±   572.888  ops/s
+SignatureBenchmark.verify     SHA512withRSA  BOUNCYCASTLE  thrpt   15    17170.334 ±   347.645  ops/s
+SignatureBenchmark.verify     SHA512withRSA     CONSCRYPT  thrpt   15    39226.402 ±  1432.780  ops/s
 ```
 
 
