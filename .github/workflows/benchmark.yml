@@ -17,4 +17,4 @@ jobs:
     - name: Build
       run: ./mvnw clean package --no-transfer-progress
     - name: Benchmark
-      run: java -jar target/microbenchmarks.jar
+      run: java -jar target/microbenchmarks.jar Cipher
